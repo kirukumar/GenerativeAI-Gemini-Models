@@ -1,0 +1,3 @@
+streamlit ## used for frontend
+google-generativeai ## used for Google Generative AI
+python-dotenv ## used for managing environment variables
