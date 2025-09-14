@@ -1,0 +1,5 @@
+## Same instead of converting the resume to image and then to bytes we get the text and pass it directly to the model
+python-dotenv
+streamlit
+google-generativeai
+PyPDF2

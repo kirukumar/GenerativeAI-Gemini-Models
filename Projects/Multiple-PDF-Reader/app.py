@@ -43,7 +43,7 @@ def get_conversational_chain():
 
     Answer:
     '''
-
+     # Requires API_KEY to be set in the environment variables
     model = ChatGoogleGenerativeAI(model="models/gemini-2.5-flash",temperature=0.3)
     prompt = PromptTemplate(template=prompt_Template,input_variables=["context", "question"])
     chain = load_qa_chain(llm=model,chain_type="stuff", prompt=prompt)
@@ -51,6 +51,7 @@ def get_conversational_chain():
 
 def answer_query(query):
 
+    # Requires API_KEY to be set in the environment variables
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     vector_store = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
     chunks = vector_store.similarity_search(query)
